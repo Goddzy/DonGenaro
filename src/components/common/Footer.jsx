@@ -5,14 +5,16 @@ import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
-import logo from '../images/logo.png'
+import logoG from '../images/logoG.png'
+import logoD from "../images/logoD.png"
 
 const Footer = () => {
   return (
     <>
       <div className="text-center colorRojo">
         <h2 className="text-light mt-3">
-          Don <img src={logo} alt="logo" height={60}/>enaro
+        <img src={logoD} alt="logoD" height={60} />on <img src={logoG} alt="logoG" height={60} />
+            enaro
         </h2>
       </div>
       <Row className="colorRojo text-light text-center pt-1 pb-3 mx-0 px-0">
