@@ -9,13 +9,14 @@ import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { faShoppingBag } from '@fortawesome/free-solid-svg-icons';
+import { Link, NavLink } from "react-router-dom";
 
 
 const Menu = () => {
   return (
     <Navbar expand="lg" className="bg-dark">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/" as={Link} to="/">
           <h1 className="text-light mt-3">
           <img src={logoD} alt="logoD" height={60} />on <img src={logoG} alt="logoG" height={60} />
             enaro
@@ -24,11 +25,11 @@ const Menu = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav"/>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="#home" className="text-light"><FontAwesomeIcon icon={faHome} /> Inicio</Nav.Link>
-            <Nav.Link href="#link" className="text-light"><FontAwesomeIcon icon={faShoppingBag} /> Hacer pedido</Nav.Link>
-            <Nav.Link href="#link" className="text-light"><FontAwesomeIcon icon={faUserPlus} /> Registrar</Nav.Link>
-            <Nav.Link href="#link" className="text-light"><FontAwesomeIcon icon={faUser} /> Iniciar Sesión</Nav.Link>
-            <Nav.Link href="#link" className="text-light"><FontAwesomeIcon icon={faShoppingCart} />  Carrito</Nav.Link>
+            <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faHome} /> Inicio</Nav.Link>
+            <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faShoppingBag} /> Hacer pedido</Nav.Link>
+            <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faUserPlus} /> Registrar</Nav.Link>
+            <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faUser} /> Iniciar Sesión</Nav.Link>
+            <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faShoppingCart} />  Carrito</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>

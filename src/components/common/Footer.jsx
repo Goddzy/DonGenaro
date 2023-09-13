@@ -19,7 +19,7 @@ const Footer = () => {
       </div>
       <Row className="colorRojo text-light text-center pt-1 pb-3 mx-0 px-0">
         <Col md="4 my-2">
-          <h2>Redes</h2>
+          <h3>Redes</h3>
           <a
             href="https://www.facebook.com/"
             target="_blank"
@@ -61,7 +61,7 @@ const Footer = () => {
         </Col>
       </Row>
       <div className="text-center colorRojo">
-          <h6 className="text-light mt-2">&copy; todos los derechos reservados</h6>
+          <h5 className="text-light mt-2">&copy; todos los derechos reservados</h5>
       </div>
     </>
   );
