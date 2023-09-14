@@ -50,7 +50,7 @@ const Inicio = () => {
           />
           <Link
             as={Link}
-            to="/"
+            to="/aboutUs"
             className="colorRojoTexto text-decoration-none"
           >
             <img
