@@ -11,13 +11,13 @@ import logoD from "../images/logoD.png"
 const Footer = () => {
   return (
     <>
-      <div className="text-center colorRojo">
+      <div className="text-center bg-dark">
         <h2 className="text-light mt-3">
         <img src={logoD} alt="logoD" height={60} />on <img src={logoG} alt="logoG" height={60} />
             enaro
         </h2>
       </div>
-      <Row className="colorRojo text-light text-center pt-1 pb-3 mx-0 px-0">
+      <Row className="bg-dark text-light text-center pt-1 pb-3 mx-0 px-0">
         <Col md="4 my-2">
           <h3>Redes</h3>
           <a
@@ -60,7 +60,7 @@ const Footer = () => {
           </Link>
         </Col>
       </Row>
-      <div className="text-center colorRojo">
+      <div className="text-center bg-dark">
           <h5 className="text-light mt-2">&copy; todos los derechos reservados</h5>
       </div>
     </>

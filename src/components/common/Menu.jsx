@@ -14,7 +14,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <Navbar expand="lg" className="bg-dark">
+    <Navbar expand="lg" className="colorRojo">
       <Container>
         <Navbar.Brand href="/" as={Link} to="/">
           <h1 className="text-light mt-3">
