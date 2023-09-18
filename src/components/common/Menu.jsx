@@ -26,7 +26,7 @@ const Menu = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faHome} /> Inicio</Nav.Link>
-            <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faShoppingBag} /> Hacer pedido</Nav.Link>
+            <Nav.Link as={Link} to="/pedirProductos" className="text-light fs-6"><FontAwesomeIcon icon={faShoppingBag} /> Hacer pedido</Nav.Link>
             <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faUserPlus} /> Registrar</Nav.Link>
             <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faUser} /> Iniciar Sesión</Nav.Link>
             <Nav.Link as={Link} to="/" className="text-light fs-6"><FontAwesomeIcon icon={faShoppingCart} />  Carrito</Nav.Link>

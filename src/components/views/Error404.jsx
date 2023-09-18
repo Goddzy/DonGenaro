@@ -5,7 +5,7 @@ import error from '../images/errorgif.gif'
 
 const Error404 = () => {
   return (
-    <Container className='my-5 text-center'>
+    <Container className='my-5 text-center mainSection'>
       <img src={error} alt="" className='img-fluid w-100'/>
       <hr />
       <h2>Oops! página no encontrada</h2>

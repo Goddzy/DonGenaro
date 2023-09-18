@@ -6,6 +6,7 @@ import './app.css'
 import AboutUs from "./components/views/AboutUs";
 import Error404 from "./components/views/Error404";
 import Administrador from "./components/views/Administrador";
+import PedirProductos from "./components/views/PedirProductos";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" element={<Inicio/>}></Route>
         <Route exact path="/aboutUs" element={<AboutUs/>}></Route>
         <Route exact path="/administrar" element={<Administrador/>}></Route>
+        <Route exact path="/pedirProductos" element={<PedirProductos/>}></Route>
         <Route exact path="/*" element={<Error404/>}></Route>
       </Routes>
       <Footer></Footer>

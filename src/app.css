@@ -20,6 +20,7 @@ img {
   background-color: #ffcd00;
 }
 
+
 .carrucel img {
   filter: grayscale(0.3);
   filter: blur(2.5px);
@@ -48,3 +49,23 @@ img {
   height: 50%;
 }
 
+.miCarrusel .carousel-control-prev,
+.miCarrusel .carousel-control-next {
+  display: none;
+}
+
+.miCarrusel .carousel-indicators {
+  display: none;
+}
+
+.item img{
+  transition: all .5s;
+}
+
+.item:hover img{
+  transform: scale(1.2);
+}
+
+.item figure{
+  overflow: hidden;
+}

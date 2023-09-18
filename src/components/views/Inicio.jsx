@@ -99,7 +99,7 @@ const Inicio = () => {
           className="w-100"
           style={{ maxHeight: "700px" }}
         />
-        <Link as={Link} to="/" className="imagen-tentate">
+        <Link as={Link} to="/pedirProductos" className="imagen-tentate">
           <img
             src="https://kentucky.com.ar/imgs/grafico-tentate.svg"
             alt="Tentáte con nuestras pizzas"

@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 
 const Administrador = () => {
   return (
-    <Container className="my-5">
+    <Container className="my-5 mainSection">
       <h1 className="text-center display-3">Administración</h1>
       <hr />
       <h2 className="mt-5 display-4">Pedidos solicitados</h2>
-      <Table striped bordered hover responsive size="sm" className="mb-5">
+      <Table striped bordered hover responsive size="sm" className="colorRojo mb-5">
         <thead>
           <tr>
             <th>Código</th>
