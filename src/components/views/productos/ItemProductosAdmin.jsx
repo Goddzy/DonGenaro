@@ -40,7 +40,6 @@ const ItemProductosAdmin = ({ producto, setProductos }) => {
     <tr>
       <td>{producto.id}</td>
       <td>{producto.nombreProducto}</td>
-      <td>{producto.estado}</td>
       <td>${producto.precio}</td>
       <td>{producto.descripcion}</td>
       <td>{producto.categoria}</td>
@@ -49,7 +48,7 @@ const ItemProductosAdmin = ({ producto, setProductos }) => {
         <Button variant="danger text-light" onClick={borrarProducto}>
           <FontAwesomeIcon icon={faTrash}/>
         </Button>
-        <Link className="btn btn-warning mx-2">
+        <Link to={`/administrar/editarProducto/${producto.id}`} className="btn btn-warning mx-2">
           <FontAwesomeIcon icon={faEdit}/>
         </Link>
       </td>

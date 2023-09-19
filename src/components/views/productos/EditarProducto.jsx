@@ -2,24 +2,48 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Container } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearProductoAPI } from "../../helpers/queries";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import { editarProductoAPI, obtenerProductoAPI } from "../../helpers/queries";
+import { useEffect } from "react";
 import Swal from "sweetalert2";
 
-const CrearProducto = () => {
-  const {register,handleSubmit,formState: { errors }, reset} = useForm();
-  const onSubmit = (data)=>{
-    crearProductoAPI(data).then((respuesta)=>{
-      if(respuesta.status === 201){
-        Swal.fire('Listo!', 'Su producto ha sido creado', 'success')
-        reset();
-      }else{
-        Swal.fire('Oh!', 'Ocurrió un error, inténtelo más tarde', 'error')
+const EditarProducto = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+  } = useForm();
+  const { id } = useParams();
+  const navegacion = useNavigate();
+
+  useEffect(() => {
+    obtenerProductoAPI(id).then((respuesta) => {
+      if (respuesta.status === 200) {
+        setValue("nombreProducto", respuesta.datos.nombreProducto);
+        setValue("descripcion", respuesta.datos.descripcion);
+        setValue("precio", respuesta.datos.precio);
+        setValue("imagen", respuesta.datos.imagen);
+        setValue("categoria", respuesta.datos.categoria);
       }
-    })
-  }
+    });
+  }, []);
+
+  const onSubmit = (data) => {
+    editarProductoAPI(id, data).then((respuesta) => {
+      if (respuesta.status === 200) {
+        Swal.fire("Producto editado", "El producto fue modificado", "success");
+        navegacion("/administrar");
+      } else {
+        Swal.fire("Error", "El producto no pudo ser modificado", "error");
+      }
+    });
+  };
+
   return (
     <Container className="my-5 mainSection">
-      <h1 className="display-4 text-center">Crear un producto</h1>
+      <h1 className="display-4 text-center">Editar </h1>
       <hr />
       <Form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Form.Group className="mb-5">
@@ -129,11 +153,11 @@ const CrearProducto = () => {
         </Form.Group>
 
         <Button variant="primary" type="submit">
-          Crear
+          Editar
         </Button>
       </Form>
     </Container>
   );
 };
 
-export default CrearProducto;
+export default EditarProducto;

@@ -45,14 +45,13 @@ const Administrador = () => {
       </Table>
       <h2 className="mt-5 display-4">
         Productos del menu
-        <Link to='/crearProducto' className="btn btn-warning text-light ms-4 mt-2"><FontAwesomeIcon className="fs-4" icon={faPlus} /></Link>
+        <Link to='/administrar/crearProducto/:id' className="btn btn-warning text-light ms-4 mt-2"><FontAwesomeIcon className="fs-4" icon={faPlus} /></Link>
       </h2>
       <Table striped bordered hover responsive size="sm" className="mb-5">
         <thead>
           <tr>
             <th>Código</th>
             <th>Nombre</th>
-            <th>Estado</th>
             <th>Precio</th>
             <th>Detalle</th>
             <th>Categoría</th>

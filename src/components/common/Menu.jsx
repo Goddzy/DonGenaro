@@ -5,11 +5,11 @@ import logoG from "../images/logoG.png";
 import logoD from "../images/logoD.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome } from "@fortawesome/free-solid-svg-icons";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { faCog } from '@fortawesome/free-solid-svg-icons';
 
 const Menu = () => {
   return (
@@ -28,6 +28,9 @@ const Menu = () => {
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/" className="text-light fs-6">
                 <FontAwesomeIcon icon={faHome} /> Inicio
+              </Nav.Link>
+              <Nav.Link as={Link} to="/administrar" className="text-light fs-6">
+              <FontAwesomeIcon icon={faCog} /> Administrar
               </Nav.Link>
               <Nav.Link
                 as={Link}
