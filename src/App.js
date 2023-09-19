@@ -9,6 +9,7 @@ import Administrador from "./components/views/Administrador";
 import PedirProductos from "./components/views/PedirProductos";
 import Registrar from "./components/views/cuentas/Registrar";
 import IniciarSesion from "./components/views/cuentas/IniciarSesion";
+import CrearProducto from "./components/views/productos/CrearProducto";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/pedirProductos" element={<PedirProductos/>}></Route>
         <Route exact path="/registrar" element={<Registrar/>}></Route>
         <Route exact path="/iniciarSesion" element={<IniciarSesion/>}></Route>
+        <Route exact path="/crearProducto" element={<CrearProducto></CrearProducto>}></Route>
         <Route exact path="/*" element={<Error404/>}></Route>
       </Routes>
       <Footer></Footer>

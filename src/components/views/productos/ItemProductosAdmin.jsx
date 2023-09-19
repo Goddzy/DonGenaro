@@ -45,11 +45,11 @@ const ItemProductosAdmin = ({ producto, setProductos }) => {
       <td>{producto.descripcion}</td>
       <td>{producto.categoria}</td>
       <td>{producto.imagen}</td>
-      <td>
+      <td className="d-flex">
         <Button variant="danger text-light" onClick={borrarProducto}>
           <FontAwesomeIcon icon={faTrash}/>
         </Button>
-        <Link className="btn btn-warning my-1">
+        <Link className="btn btn-warning mx-2">
           <FontAwesomeIcon icon={faEdit}/>
         </Link>
       </td>

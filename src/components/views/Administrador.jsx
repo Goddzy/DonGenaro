@@ -4,11 +4,16 @@ import { Table, Button } from "react-bootstrap";
 import { useState } from "react";
 import { obtenerProductosAPI } from "../helpers/queries";
 import ItemProductosAdmin from "./productos/ItemProductosAdmin";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { Link } from "react-router-dom";
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
   useEffect(() => {
-    obtenerProductosAPI().then((respuesta) => {setProductos(respuesta)})
+    obtenerProductosAPI().then((respuesta) => {
+      setProductos(respuesta);
+    });
   }, []);
 
   return (
@@ -16,14 +21,7 @@ const Administrador = () => {
       <h1 className="text-center display-3">Administración</h1>
       <hr />
       <h2 className="mt-5 display-4">Pedidos solicitados</h2>
-      <Table
-        striped
-        bordered
-        hover
-        responsive
-        size="sm"
-        className="mb-5"
-      >
+      <Table striped bordered hover responsive size="sm" className="mb-5">
         <thead>
           <tr>
             <th>Código</th>
@@ -45,7 +43,10 @@ const Administrador = () => {
           </tr>
         </tbody>
       </Table>
-      <h2 className="mt-5 display-4">Productos del menu</h2>
+      <h2 className="mt-5 display-4">
+        Productos del menu
+        <Link to='/crearProducto' className="btn btn-warning text-light ms-4 mt-2"><FontAwesomeIcon className="fs-4" icon={faPlus} /></Link>
+      </h2>
       <Table striped bordered hover responsive size="sm" className="mb-5">
         <thead>
           <tr>
@@ -60,8 +61,15 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-            {productos.map((producto) => {return <ItemProductosAdmin producto={producto} key={producto.id} setProductos={setProductos}></ItemProductosAdmin>;
-            })}
+          {productos.map((producto) => {
+            return (
+              <ItemProductosAdmin
+                producto={producto}
+                key={producto.id}
+                setProductos={setProductos}
+              ></ItemProductosAdmin>
+            );
+          })}
         </tbody>
       </Table>
       <h2 className="mt-5 display-4">Usuarios</h2>
