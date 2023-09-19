@@ -1,5 +1,8 @@
 const PRODUCTOS = process.env.REACT_APP_API_PRODUCTOS;
+const USUARIOS = process.env.REACT_APP_API_USUARIOS;
+const PEDIDOS = process.env.REACT_APP_API_PEDIDOS;
 
+//===============================PETICIONES PARA LOS PRODUCTOS===============================
 //petición GET
 export const obtenerProductosAPI = async () => {
   try {
@@ -10,7 +13,6 @@ export const obtenerProductosAPI = async () => {
     console.log(error);
   }
 };
-
 //petición GET pero de un solo producto
 export const obtenerProductoAPI = async (id) => {
   try {
@@ -24,7 +26,6 @@ export const obtenerProductoAPI = async (id) => {
     console.log(error);
   }
 };
-
 //petición DELETE
 export const borrarProductoAPI = async (id) => {
   try {
@@ -34,7 +35,6 @@ export const borrarProductoAPI = async (id) => {
     console.log(error);
   }
 };
-
 //petición POST
 export const crearProductoAPI = async (producto) => {
   try {
@@ -48,9 +48,7 @@ export const crearProductoAPI = async (producto) => {
     console.log(error);
   }
 };
-
 //petición PUT
-
 export const editarProductoAPI = async (id, producto) => {
   const respuesta = await fetch(PRODUCTOS + "/" + id, {
     method: "PUT",
@@ -58,4 +56,103 @@ export const editarProductoAPI = async (id, producto) => {
     body: JSON.stringify(producto),
   });
   return respuesta;
+};
+
+//===============================PETICIONES PARA LOS USUARIOS===============================
+
+//petición get de los usuarios
+export const obtenerUsuariosAPI = async () => {
+  try {
+    const usuarios = await fetch(USUARIOS);
+    const listaUsuarios = await usuarios.json();
+    return listaUsuarios;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//petición get un solo usuario
+export const obtenerUsuarioAPI = async (id) => {
+  try {
+    const respuesta = await fetch(USUARIOS + "/" + id);
+    const respuestaDefinitiva = {
+      dato: await respuesta.json(),
+      status: respuesta.status,
+    };
+    return respuestaDefinitiva;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//petición post para crear un usuario
+export const crearUsuarioAPI = async (producto) => {
+  try {
+    const respuesta = await fetch(USUARIOS, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: await producto.json(),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//petición delete para borrar un usuario
+export const borrarUsuarioAPI = async (id) => {
+  try {
+    const respuesta = await fetch(USUARIOS + "/" + id, { method: "DELETE" });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//===============================PETICIONES PARA LOS PEDIDOS===============================
+
+//petición get de los pedidos
+export const obtenerPedidosAPI = async () => {
+  try {
+    const pedidos = await fetch(PEDIDOS);
+    const listaPedidos = await pedidos.json();
+    return listaPedidos;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//petición get de un solo pedido
+export const obtenerPedidoAPI = async (id) => {
+  try {
+    const respuesta = await fetch(PEDIDOS + "/" + id);
+    const respuestaDefinitiva = await respuesta.json();
+    return respuestaDefinitiva;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//petición post para crear un pedido
+export const crearPedidoAPI = async (pedido) => {
+  try {
+    const respuesta = await fetch(PEDIDOS, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: await pedido.json(),
+    });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+//petición delete para borrar un pedido
+export const borrarPedidoAPI = async (id) => {
+  try {
+    const respuesta = await fetch(PEDIDOS + "/" + id, { method: "DELETE" });
+    return respuesta;
+  } catch (error) {
+    console.log(error);
+  }
 };

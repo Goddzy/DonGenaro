@@ -1,12 +1,13 @@
 import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Pagination } from "react-bootstrap";
 import { useState } from "react";
 import { obtenerProductosAPI } from "../helpers/queries";
 import ItemProductosAdmin from "./productos/ItemProductosAdmin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
