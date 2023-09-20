@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
 import ItemPedidos from "./cuentas/ItemPedidos";
+import ItemCuentas from "./cuentas/ItemCuentas";
 
 
 const Administrador = () => {
@@ -88,15 +89,9 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>as87d6qw8uyte128637</td>
-            <td>Renato Trevisiol Montiel</td>
-            <th>renatotrevisiolmontiel@gmail.com</th>
-            <th>administrador/usuario</th>
-            <th>
-              <Button>Borrar</Button>
-            </th>
-          </tr>
+          {
+            usuarios.map((usuarios)=>{return <ItemCuentas key={usuarios.id} usuarios={usuarios} setUsuarios={setUsuarios}></ItemCuentas>})
+          }
         </tbody>
       </Table>
     </Container>
