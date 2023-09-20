@@ -2,18 +2,28 @@ import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 import { Table, Button, Pagination } from "react-bootstrap";
 import { useState } from "react";
-import { obtenerProductosAPI } from "../helpers/queries";
+import { obtenerPedidosAPI, obtenerProductosAPI, obtenerUsuariosAPI } from "../helpers/queries";
 import ItemProductosAdmin from "./productos/ItemProductosAdmin";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { Link } from "react-router-dom";
+import ItemPedidos from "./cuentas/ItemPedidos";
 
 
 const Administrador = () => {
   const [productos, setProductos] = useState([]);
+  const [pedidos, setPedidos] = useState([]);
+  const [usuarios, setUsuarios] = useState([]);
+
   useEffect(() => {
     obtenerProductosAPI().then((respuesta) => {
       setProductos(respuesta);
+    });
+    obtenerPedidosAPI().then((respuesta)=>{
+      setPedidos(respuesta);
+    });
+    obtenerUsuariosAPI().then((respuesta)=>{
+      setUsuarios(respuesta);
     });
   }, []);
 
@@ -33,15 +43,9 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>as87d6qw8uyte128637</td>
-            <td>Renato Trevisiol Montiel</td>
-            <td>14/09/2023 16:37</td>
-            <td>Pizza Napolitana</td>
-            <td>
-              <Button>Borrar</Button>
-            </td>
-          </tr>
+          {
+             pedidos.map((pedidos)=>{return <ItemPedidos pedidos={pedidos} key={pedidos.id} setPedidos={setPedidos}></ItemPedidos>})
+          }
         </tbody>
       </Table>
       <h2 className="mt-5 display-4">
