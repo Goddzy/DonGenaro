@@ -3,10 +3,14 @@ import { Container, Row } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
 import ItemProducto from "./productos/ItemProducto";
 import { obtenerProductosAPI } from "../helpers/queries";
-import CarritoProductos from "./productos/CarritoProductos";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import ListaProductos from "./productos/ListaProductos";
 
 const PedirProductos = () => {
   const [productos, setProductos] = useState([]);
+  const [mostrarLista, setMostrarLista] = useState(false);
+
   useEffect(() => {
     obtenerProductosAPI().then((productos) => {
       setProductos(productos);
@@ -28,7 +32,34 @@ const PedirProductos = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-      <CarritoProductos></CarritoProductos>
+      <div
+        onClick={()=> setMostrarLista(!mostrarLista)}
+        style={{
+          position: "fixed",
+          top: "80px",
+          right: "5px",
+          zIndex: "1000",
+        }}
+      >
+        <div
+          style={{
+            width: "50px",
+            height: "50px",
+            borderRadius: "50%",
+            background: "#000",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            cursor: "pointer",
+          }}
+        >
+          <FontAwesomeIcon
+            icon={faShoppingCart}
+            style={{ fontSize: "1.5em", color: "#fff" }}
+          />
+        </div>
+      </div>
+      <ListaProductos mostrarLista={mostrarLista} setMostrarLista={setMostrarLista}></ListaProductos>
       <Container>
         <Row>
           {productos.map((producto) => (
