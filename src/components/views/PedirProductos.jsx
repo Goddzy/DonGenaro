@@ -10,6 +10,7 @@ import ListaProductos from "./productos/ListaProductos";
 const PedirProductos = () => {
   const [productos, setProductos] = useState([]);
   const [mostrarLista, setMostrarLista] = useState(false);
+  const [productosPedidos, setProductosPedidos] = useState([]); 
 
   useEffect(() => {
     obtenerProductosAPI().then((productos) => {
@@ -63,7 +64,7 @@ const PedirProductos = () => {
       <Container>
         <Row>
           {productos.map((producto) => (
-            <ItemProducto producto={producto} key={producto.id}></ItemProducto>
+            <ItemProducto productosPedidos={productosPedidos} setProductosPedidos={setProductosPedidos} producto={producto} key={producto.id}></ItemProducto>
           ))}
         </Row>
       </Container>
