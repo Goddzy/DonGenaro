@@ -16,13 +16,29 @@ import ItemCuentas from "./cuentas/ItemCuentas";
 import { Pagination } from "react-bootstrap";
 
 const Administrador = () => {
+  //OBTENER PRODUCTOS/PEDIDOS/USUARIOS
   const [productos, setProductos] = useState([]);
   const [pedidos, setPedidos] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
 
-  const [paginaActual, setPaginaActual] = useState(1);
-  const elementosPorPagina = 5;
-  const totalPaginas = Math.ceil(productos.length / elementosPorPagina);
+  //PAGINACIONES
+  const [paginaActualProductos, setPaginaActualProductos] = useState(1);
+  const elementosPorPaginaProductos = 5;
+  const totalPaginasProductos = Math.ceil(
+    productos.length / elementosPorPaginaProductos
+  );
+
+  const [paginaActualUsuarios, setPaginaActualUsuarios] = useState(1);
+  const elementosPorPaginaUsuarios = 5;
+  const totalPaginasUsuarios = Math.ceil(
+    usuarios.length / elementosPorPaginaUsuarios
+  );
+
+  const [paginaActualPedidos, setPaginaActualPedidos] = useState(1);
+  const elementosPorPaginaPedidos = 5;
+  const totalPaginasPedidos = Math.ceil(
+    pedidos.length / elementosPorPaginaPedidos
+  );
 
   useEffect(() => {
     obtenerProductosAPI().then((respuesta) => {
@@ -52,17 +68,33 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          {pedidos.map((pedidos) => {
-            return (
-              <ItemPedidos
-                pedidos={pedidos}
-                key={pedidos.id}
-                setPedidos={setPedidos}
-              ></ItemPedidos>
-            );
-          })}
+          {pedidos
+            .slice(
+              (paginaActualPedidos - 1) * elementosPorPaginaPedidos,
+              paginaActualPedidos * elementosPorPaginaPedidos
+            )
+            .map((pedidos) => {
+              return (
+                <ItemPedidos
+                  pedidos={pedidos}
+                  key={pedidos.id}
+                  setPedidos={setPedidos}
+                ></ItemPedidos>
+              );
+            })}
         </tbody>
       </Table>
+      <Pagination>
+        {Array.from({ length: totalPaginasPedidos }).map((_, index) => (
+          <Pagination.Item
+            key={index}
+            active={index + 1 === paginaActualPedidos}
+            onClick={() => setPaginaActualPedidos(index + 1)}
+          >
+            {index + 1}
+          </Pagination.Item>
+        ))}
+      </Pagination>
       <h2 className="mt-5 display-4">
         Productos del menu
         <Link
@@ -87,8 +119,8 @@ const Administrador = () => {
         <tbody>
           {productos
             .slice(
-              (paginaActual - 1) * elementosPorPagina,
-              paginaActual * elementosPorPagina
+              (paginaActualProductos - 1) * elementosPorPaginaProductos,
+              paginaActualProductos * elementosPorPaginaProductos
             )
             .map((producto) => {
               return (
@@ -102,11 +134,11 @@ const Administrador = () => {
         </tbody>
       </Table>
       <Pagination>
-        {Array.from({ length: totalPaginas }).map((_, index) => (
+        {Array.from({ length: totalPaginasProductos }).map((_, index) => (
           <Pagination.Item
             key={index}
-            active={index + 1 === paginaActual}
-            onClick={() => setPaginaActual(index + 1)}
+            active={index + 1 === paginaActualProductos}
+            onClick={() => setPaginaActualProductos(index + 1)}
           >
             {index + 1}
           </Pagination.Item>
@@ -124,17 +156,33 @@ const Administrador = () => {
           </tr>
         </thead>
         <tbody>
-          {usuarios.map((usuarios) => {
-            return (
-              <ItemCuentas
-                key={usuarios.id}
-                usuarios={usuarios}
-                setUsuarios={setUsuarios}
-              ></ItemCuentas>
-            );
-          })}
+          {usuarios
+            .slice(
+              (paginaActualUsuarios - 1) * elementosPorPaginaUsuarios,
+              paginaActualUsuarios * elementosPorPaginaUsuarios
+            )
+            .map((usuarios) => {
+              return (
+                <ItemCuentas
+                  key={usuarios.id}
+                  usuarios={usuarios}
+                  setUsuarios={setUsuarios}
+                ></ItemCuentas>
+              );
+            })}
         </tbody>
       </Table>
+      <Pagination>
+        {Array.from({ length: totalPaginasUsuarios }).map((_, index) => (
+          <Pagination.Item
+            key={index}
+            active={index + 1 === paginaActualUsuarios}
+            onClick={() => setPaginaActualUsuarios(index + 1)}
+          >
+            {index + 1}
+          </Pagination.Item>
+        ))}
+      </Pagination>
     </Container>
   );
 };
