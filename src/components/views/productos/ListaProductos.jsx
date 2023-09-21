@@ -1,6 +1,7 @@
 import React from "react";
+import ItemProductosPedidos from "./ItemProductosPedidos";
 
-const ListaProductos = ({ mostrarLista, setMostrarLista }) => {
+const ListaProductos = ({ mostrarLista, productosPedidos }) => {
   return (
     <>
       {mostrarLista && (
@@ -14,10 +15,9 @@ const ListaProductos = ({ mostrarLista, setMostrarLista }) => {
           }}
         >
           <ul style={{ listStyleType: "none", padding: "0" }}>
-            <li style={{ padding: "5px 10px" }}>Producto genérico</li>
-            <li style={{ padding: "5px 10px" }}>Producto genérico</li>
-            <li style={{ padding: "5px 10px" }}>Producto genérico</li>
-            <li style={{ padding: "5px 10px" }}>Producto genérico</li>
+            {
+              productosPedidos.map((producto)=><ItemProductosPedidos producto={producto} key={producto.id}></ItemProductosPedidos>)
+            }
           </ul>
         </div>
       )}

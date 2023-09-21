@@ -60,9 +60,9 @@ const PedirProductos = () => {
           />
         </div>
       </div>
-      <ListaProductos mostrarLista={mostrarLista} setMostrarLista={setMostrarLista}></ListaProductos>
+      <ListaProductos productosPedidos={productosPedidos} mostrarLista={mostrarLista} setMostrarLista={setMostrarLista}></ListaProductos>
       <Container>
-        <Row>
+        <Row> 
           {productos.map((producto) => (
             <ItemProducto productosPedidos={productosPedidos} setProductosPedidos={setProductosPedidos} producto={producto} key={producto.id}></ItemProducto>
           ))}

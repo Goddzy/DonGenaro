@@ -1,8 +1,7 @@
 const ItemProductosPedidos = ({ producto }) => {
   return (
-    <li>
-      <span>{producto.nombre}</span>
-      <span>{producto.precio}</span>
+    <li style={{ padding: "5px 10px" }}>
+      <span>{producto.nombreProducto} ${producto.precio}</span>
     </li>
   );
 };
