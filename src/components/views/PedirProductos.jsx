@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { Carousel } from "react-bootstrap";
 import ItemProducto from "./productos/ItemProducto";
 import { obtenerProductosAPI } from "../helpers/queries";
@@ -10,13 +10,34 @@ import ListaProductos from "./productos/ListaProductos";
 const PedirProductos = () => {
   const [productos, setProductos] = useState([]);
   const [mostrarLista, setMostrarLista] = useState(false);
-  const [productosPedidos, setProductosPedidos] = useState([]); 
+  const [productosPedidos, setProductosPedidos] = useState([]);
 
   useEffect(() => {
     obtenerProductosAPI().then((productos) => {
       setProductos(productos);
     });
   }, []);
+
+  // Organizar productos por categoría
+  const categorias = [
+    "Pizzas",
+    "Pastas",
+    "Empanadas",
+    "Gaseosas",
+    "Alcohol",
+    "Postres salados",
+    "Postres dulces",
+  ];
+
+  const productosPorCategoria = {};
+
+  productos.forEach((producto) => {
+    if (producto.categoria in productosPorCategoria) {
+      productosPorCategoria[producto.categoria].push(producto);
+    } else {
+      productosPorCategoria[producto.categoria] = [producto];
+    }
+  });
 
   return (
     <section className="mainSection">
@@ -33,8 +54,10 @@ const PedirProductos = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
+      <div>
+      </div>
       <div
-        onClick={()=> setMostrarLista(!mostrarLista)}
+        onClick={() => setMostrarLista(!mostrarLista)}
         style={{
           position: "fixed",
           top: "80px",
@@ -60,13 +83,28 @@ const PedirProductos = () => {
           />
         </div>
       </div>
-      <ListaProductos productosPedidos={productosPedidos} mostrarLista={mostrarLista} setMostrarLista={setMostrarLista}></ListaProductos>
+      <ListaProductos
+        productosPedidos={productosPedidos}
+        mostrarLista={mostrarLista}
+        setMostrarLista={setMostrarLista}
+      ></ListaProductos>
       <Container>
-        <Row> 
-          {productos.map((producto) => (
-            <ItemProducto productosPedidos={productosPedidos} setProductosPedidos={setProductosPedidos} producto={producto} key={producto.id}></ItemProducto>
-          ))}
-        </Row>
+        {categorias.map((categoria) => (
+          <Row key={categoria} className="mb-4">
+            <Col>
+              <h2 className="mt-5 display-4">{categoria}</h2>
+              <hr />
+              {productosPorCategoria[categoria]?.map((producto) => (
+                <ItemProducto
+                  productosPedidos={productosPedidos}
+                  setProductosPedidos={setProductosPedidos}
+                  producto={producto}
+                  key={producto.id}
+                ></ItemProducto>
+              ))}
+            </Col>
+          </Row>
+        ))}
       </Container>
     </section>
   );

@@ -115,13 +115,13 @@ const CrearProducto = () => {
             {...register("categoria", { required: "Seleccione una categoría" })}
           >
             <option value="">Seleccione una opción...</option>
-            <option value="Pizza">Pizza</option>
-            <option value="Pasta">Pasta</option>
-            <option value="Empanada">Empanada</option>
-            <option value="Gaseosa">Gaseosa</option>
+            <option value="Pizzas">Pizza</option>
+            <option value="Pastas">Pasta</option>
+            <option value="Empanadas">Empanada</option>
+            <option value="Gaseosas">Gaseosa</option>
             <option value="Alcohol">Alcohol</option>
-            <option value="Postre salado">Postre salado</option>
-            <option value="Postre dulce">Postre dulce</option>
+            <option value="Postres salados">Postre salado</option>
+            <option value="Postres dulces">Postre dulce</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
