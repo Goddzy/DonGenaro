@@ -8,10 +8,17 @@ import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
-import { faCog } from '@fortawesome/free-solid-svg-icons';
+import { Link, useNavigate } from "react-router-dom";
+import { faCog } from "@fortawesome/free-solid-svg-icons";
+import { Button } from "react-bootstrap";
 
-const Menu = () => {
+const Menu = ({ setUsuarioLogeado }) => {
+  const navigate = useNavigate();
+  const cerrarSesion = () => {
+    localStorage.removeItem("usuarioCreadoKey");
+    setUsuarioLogeado({});
+    navigate("/");
+  };
   return (
     <>
       <Navbar expand="lg" className="colorRojo">
@@ -30,7 +37,7 @@ const Menu = () => {
                 <FontAwesomeIcon icon={faHome} /> Inicio
               </Nav.Link>
               <Nav.Link as={Link} to="/administrar" className="text-light fs-6">
-              <FontAwesomeIcon icon={faCog} /> Administrar
+                <FontAwesomeIcon icon={faCog} /> Administrar
               </Nav.Link>
               <Nav.Link
                 as={Link}
@@ -42,8 +49,15 @@ const Menu = () => {
               <Nav.Link as={Link} to="/registrar" className="text-light fs-6">
                 <FontAwesomeIcon icon={faUserPlus} /> Registrar
               </Nav.Link>
-              <Nav.Link as={Link} to="/iniciarSesion" className="text-light fs-6">
+              <Nav.Link
+                as={Link}
+                to="/iniciarSesion"
+                className="text-light fs-6"
+              >
                 <FontAwesomeIcon icon={faUser} /> Iniciar Sesión
+              </Nav.Link>
+              <Nav.Link as={Button} className="text-light fs-6" variant="danger" onClick={cerrarSesion}>
+                Logout
               </Nav.Link>
             </Nav>
           </Navbar.Collapse>

@@ -1,11 +1,28 @@
 import { Container, Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { login } from "../../helpers/queries";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
-const IniciarSesion = () => {
+const IniciarSesion = ({setUsuarioLogeado, usuarioLogeado}) => {
+  const navigate = useNavigate();
   const {register,handleSubmit,formState: { errors }} = useForm();
 
-  const onSubmit = () => {
-    //peticion PUT
+  const onSubmit = (data) => {
+    login(data).then((respuesta)=>{
+      if (respuesta){
+        localStorage.setItem('usuarioCreadoKey', JSON.stringify(respuesta));
+        setUsuarioLogeado(respuesta);
+        Swal.fire({
+          position: 'top-end',
+          icon: 'success',
+          title: `Bienvenido ${usuarioLogeado.nombreUsuario}`,
+          showConfirmButton: false,
+          timer: 1500
+        })
+        navigate('/');
+      }else{Swal.fire('El usuario no existe', 'Error en el nombre de usuario o contraseña', 'error')}
+    })
   };
 
   return (

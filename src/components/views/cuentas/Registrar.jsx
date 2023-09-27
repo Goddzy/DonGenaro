@@ -1,16 +1,29 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Button, Container, Form } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
+import { crearUsuarioAPI } from "../../helpers/queries";
+import Swal from "sweetalert2";
 
-const Registrar = () => {
+const Registrar = ({setUsuarioLogeado}) => {
+  const navegacion = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset
   } = useForm();
 
-  const onSubmit = () => {
-    //peticion PUT
+  const onSubmit = (data) => {
+    crearUsuarioAPI(data).then((respuesta) => {
+      if (respuesta.status === 201) {
+        reset();
+        Swal.fire("Su cuenta ha sido creada","Ya puede iniciar sesión","success");
+        localStorage.setItem("usuarioCreadoKey", JSON.stringify(data));
+        setUsuarioLogeado(data);
+        navegacion("/");
+      }else{Swal.fire('Ocurrió un error','Intente este proceso más tarde' , 'error')}
+    });
   };
 
   return (
@@ -33,7 +46,7 @@ const Registrar = () => {
               maxLength: {
                 value: 100,
                 message: "El nombre debe requerir como máximo 100 caracteres",
-              }
+              },
             })}
           />
           <Form.Text className="text-danger">
@@ -79,7 +92,7 @@ const Registrar = () => {
                 message: "Debe introducir una contraseña mayor a 5 caracteres",
               },
               maxLength: {
-                value: 50,
+                value: 100,
                 message: "Debe introducir una contraseña menor a 50 caracteres",
               },
             })}

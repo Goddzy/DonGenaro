@@ -86,12 +86,14 @@ export const obtenerUsuarioAPI = async (id) => {
 };
 
 //petición post para crear un usuario
-export const crearUsuarioAPI = async (producto) => {
+export const crearUsuarioAPI = async (usuario) => {
   try {
+    //añado la propiedad perfil al usuario
+    usuario.perfil = "cliente";
     const respuesta = await fetch(USUARIOS, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: await producto.json(),
+      body: JSON.stringify(usuario)
     });
     return respuesta;
   } catch (error) {
@@ -108,6 +110,27 @@ export const borrarUsuarioAPI = async (id) => {
     console.log(error);
   }
 };
+
+//logeo de una cuenta
+export const login = async (usuario) => {
+  try {
+    const respuesta = await fetch(USUARIOS);
+    const listaUsuarios = await respuesta.json();
+    const usuarioBuscado = listaUsuarios.find((itemUsuario)=>{return itemUsuario.emailUsuario === usuario.emailUsuario
+    })
+    if (usuarioBuscado){
+      if(usuarioBuscado.password===usuario.contraseniaUsuario){
+        return usuarioBuscado
+      }else{return}
+
+    }else{
+      return
+    }
+  } catch (error) {
+    return
+  }
+};
+
 
 //===============================PETICIONES PARA LOS PEDIDOS===============================
 
@@ -139,7 +162,7 @@ export const crearPedidoAPI = async (pedido) => {
     const respuesta = await fetch(PEDIDOS, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: await pedido.json(),
+      body: JSON.stringify(pedido)
     });
     return respuesta;
   } catch (error) {

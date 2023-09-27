@@ -2,7 +2,7 @@
   "productos": [
     {
       "nombreProducto": "Medialuna",
-      "descripcion": "dada",
+      "descripcion": "Media luna ricarda",
       "precio": "456",
       "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
       "categoria": "Pizza",
@@ -69,32 +69,9 @@
     {
       "nombreUsuario": "Renato Trevisiol Montiel",
       "emailUsuario": "renatotrevisiolmontiel@gmail.com",
+      "password": "elfedecomecaca",
       "perfil": "administrador",
       "id": 1
-    },
-    {
-      "nombreUsuario": "Renato Trevisiol Montiel",
-      "emailUsuario": "renatotrevisiolmontiel@gmail.com",
-      "perfil": "administrador",
-      "id": 2
-    },
-    {
-      "nombreUsuario": "Renato Trevisiol Montiel",
-      "emailUsuario": "renatotrevisiolmontiel@gmail.com",
-      "perfil": "administrador",
-      "id": 3
-    },
-    {
-      "nombreUsuario": "Renato Trevisiol Montiel",
-      "emailUsuario": "renatotrevisiolmontiel@gmail.com",
-      "perfil": "administrador",
-      "id": 4
-    },
-    {
-      "nombreUsuario": "Renato Trevisiol Montiel",
-      "emailUsuario": "renatotrevisiolmontiel@gmail.com",
-      "perfil": "administrador",
-      "id": 5
     }
   ],
   "pedidos": [
@@ -103,30 +80,6 @@
       "fechaPedido": "14/09/2023 16:37",
       "productoPedido": "Pizza napolitana",
       "id": 1
-    },
-    {
-      "nombrePedido": "Renato Trevisiol Montiel",
-      "fechaPedido": "14/09/2023 16:37",
-      "productoPedido": "Pizza napolitana",
-      "id": 2
-    },
-    {
-      "nombrePedido": "Renato Trevisiol Montiel",
-      "fechaPedido": "14/09/2023 16:37",
-      "productoPedido": "Pizza napolitana",
-      "id": 3
-    },
-    {
-      "nombrePedido": "Renato Trevisiol Montiel",
-      "fechaPedido": "14/09/2023 16:37",
-      "productoPedido": "Pizza napolitana",
-      "id": 4
-    },
-    {
-      "nombrePedido": "Renato Trevisiol Montiel",
-      "fechaPedido": "14/09/2023 16:37",
-      "productoPedido": "Pizza napolitana",
-      "id": 5
     }
   ]
 }
