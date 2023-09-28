@@ -10,14 +10,22 @@ import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { faCog } from "@fortawesome/free-solid-svg-icons";
-import { Button } from "react-bootstrap";
+import Swal from "sweetalert2";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
 
-const Menu = ({ setUsuarioLogeado }) => {
+const Menu = ({ setUsuarioLogeado, usuarioLogeado }) => {
   const navigate = useNavigate();
   const cerrarSesion = () => {
     localStorage.removeItem("usuarioCreadoKey");
     setUsuarioLogeado({});
     navigate("/");
+    Swal.fire({
+      position: "top-end",
+      icon: 'info',
+      title: `Cerró sesión`,
+      showConfirmButton: false,
+      timer: 1500,
+    });
   };
   return (
     <>
@@ -36,9 +44,6 @@ const Menu = ({ setUsuarioLogeado }) => {
               <Nav.Link as={Link} to="/" className="text-light fs-6">
                 <FontAwesomeIcon icon={faHome} /> Inicio
               </Nav.Link>
-              <Nav.Link as={Link} to="/administrar" className="text-light fs-6">
-                <FontAwesomeIcon icon={faCog} /> Administrar
-              </Nav.Link>
               <Nav.Link
                 as={Link}
                 to="/pedirProductos"
@@ -46,19 +51,47 @@ const Menu = ({ setUsuarioLogeado }) => {
               >
                 <FontAwesomeIcon icon={faShoppingBag} /> Hacer pedido
               </Nav.Link>
-              <Nav.Link as={Link} to="/registrar" className="text-light fs-6">
-                <FontAwesomeIcon icon={faUserPlus} /> Registrar
-              </Nav.Link>
-              <Nav.Link
-                as={Link}
-                to="/iniciarSesion"
-                className="text-light fs-6"
-              >
-                <FontAwesomeIcon icon={faUser} /> Iniciar Sesión
-              </Nav.Link>
-              <Nav.Link as={Button} className="text-light fs-6" variant="danger" onClick={cerrarSesion}>
-                Logout
-              </Nav.Link>
+              {/* Mostrar "Administrar" solo si el perfil es "administrador" */}
+              {usuarioLogeado.perfil === "administrador" && (
+                <Nav.Link
+                  as={Link}
+                  to="/administrar"
+                  className="text-light fs-6"
+                >
+                  <FontAwesomeIcon icon={faCog} /> Administrar
+                </Nav.Link>
+              )}
+
+              {/* dependiendo de si el usuario está logeado o no, voy a mostrar o no estos botones */}
+              {/* ... Otros elementos del menú ... */}
+              {usuarioLogeado.nombreUsuario ? (
+                <>
+                  <Nav.Link
+                    className="text-light fs-6"
+                    variant="danger"
+                    onClick={cerrarSesion}
+                  >
+                    <FontAwesomeIcon icon={faSignOutAlt} /> Cerrar Sesión
+                  </Nav.Link>
+                </>
+              ) : (
+                <>
+                  <Nav.Link
+                    as={Link}
+                    to="/registrar"
+                    className="text-light fs-6"
+                  >
+                    <FontAwesomeIcon icon={faUserPlus} /> Registrar
+                  </Nav.Link>
+                  <Nav.Link
+                    as={Link}
+                    to="/iniciarSesion"
+                    className="text-light fs-6"
+                  >
+                    <FontAwesomeIcon icon={faUser} /> Iniciar Sesión
+                  </Nav.Link>
+                </>
+              )}
             </Nav>
           </Navbar.Collapse>
         </Container>

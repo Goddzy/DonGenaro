@@ -72,6 +72,13 @@
       "password": "elfedecomecaca",
       "perfil": "administrador",
       "id": 1
+    },
+    {
+      "nombreUsuario": "Genaro Trevisiol Montiel",
+      "emailUsuario": "genarotrevisiolmontiel@gmail.com",
+      "password": "mirinda321",
+      "perfil": "cliente",
+      "id": 2
     }
   ],
   "pedidos": [

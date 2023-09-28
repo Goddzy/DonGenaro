@@ -85,7 +85,7 @@ const Registrar = ({setUsuarioLogeado}) => {
             type="password"
             className="text-center mt-5"
             placeholder="Contraseña"
-            {...register("contraseniaUsuario", {
+            {...register("password", {
               required: "La contraseña es requerida",
               minLength: {
                 value: 5,
@@ -98,7 +98,7 @@ const Registrar = ({setUsuarioLogeado}) => {
             })}
           />
           <Form.Text className="text-danger">
-            {errors.contraseniaUsuario?.message}
+            {errors.password?.message}
           </Form.Text>
         </Form.Group>
         <Button type="submit" variant="danger" className="w-100 my-5">

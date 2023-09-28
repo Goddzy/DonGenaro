@@ -4,7 +4,7 @@ import { login } from "../../helpers/queries";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 
-const IniciarSesion = ({setUsuarioLogeado, usuarioLogeado}) => {
+const IniciarSesion = ({setUsuarioLogeado}) => {
   const navigate = useNavigate();
   const {register,handleSubmit,formState: { errors }} = useForm();
 
@@ -16,7 +16,7 @@ const IniciarSesion = ({setUsuarioLogeado, usuarioLogeado}) => {
         Swal.fire({
           position: 'top-end',
           icon: 'success',
-          title: `Bienvenido ${usuarioLogeado.nombreUsuario}`,
+          title: `Bienvenido ${respuesta.nombreUsuario}`,
           showConfirmButton: false,
           timer: 1500
         })
@@ -62,7 +62,7 @@ const IniciarSesion = ({setUsuarioLogeado, usuarioLogeado}) => {
             type="password"
             className="text-center mt-5"
             placeholder="Contraseña"
-            {...register("contraseniaUsuario", {
+            {...register("password", {
               required: "La contraseña es requerida",
               minLength: {
                 value: 5,
@@ -75,7 +75,7 @@ const IniciarSesion = ({setUsuarioLogeado, usuarioLogeado}) => {
             })}
           />
           <Form.Text className="text-danger">
-            {errors.contraseniaUsuario?.message}
+            {errors.password?.message}
           </Form.Text>
         </Form.Group>
         <Button type="submit" variant="danger" className="w-100 my-5">

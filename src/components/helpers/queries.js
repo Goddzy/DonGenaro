@@ -119,7 +119,7 @@ export const login = async (usuario) => {
     const usuarioBuscado = listaUsuarios.find((itemUsuario)=>{return itemUsuario.emailUsuario === usuario.emailUsuario
     })
     if (usuarioBuscado){
-      if(usuarioBuscado.password===usuario.contraseniaUsuario){
+      if(usuarioBuscado.password===usuario.password){
         return usuarioBuscado
       }else{return}
 

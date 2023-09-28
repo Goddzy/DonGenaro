@@ -12,6 +12,8 @@ import IniciarSesion from "./components/views/cuentas/IniciarSesion";
 import CrearProducto from "./components/views/productos/CrearProducto";
 import EditarProducto from "./components/views/productos/EditarProducto"
 import { useState } from "react";
+import RutasProtegidas from "./components/routes/RutasProtegidas";
+import RutasAdmin from "./components/routes/RutasAdmin";
 
 function App() {
   const usuario = JSON.parse(localStorage.getItem('usuarioCreadoKey')) || {};
@@ -23,12 +25,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Inicio/>}></Route>
         <Route exact path="/aboutUs" element={<AboutUs/>}></Route>
-        <Route exact path="/administrar" element={<Administrador/>}></Route>
         <Route exact path="/pedirProductos" element={<PedirProductos/>}></Route>
         <Route exact path="/registrar" element={<Registrar setUsuarioLogeado={setUsuarioLogeado}/>}></Route>
-        <Route exact path="/iniciarSesion" element={<IniciarSesion setUsuarioLogeado={setUsuarioLogeado} usuarioLogeado={usuarioLogeado}/>}></Route>
-        <Route exact path="/administrar/crearProducto" element={<CrearProducto/>}></Route>
-        <Route exact path="/administrar/editarProducto/:id" element={<EditarProducto/>}></Route>
+        <Route exact path="/iniciarSesion" element={<IniciarSesion setUsuarioLogeado={setUsuarioLogeado}/>}></Route>
+        <Route path="/administrar/*" element={<RutasProtegidas><RutasAdmin></RutasAdmin></RutasProtegidas>}></Route>
         <Route exact path="/*" element={<Error404/>}></Route>
       </Routes>
       <Footer></Footer>
