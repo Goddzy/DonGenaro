@@ -68,3 +68,17 @@ img {
 .item figure {
   overflow: hidden;
 }
+
+.btnClearAll{
+  border: none;
+  background-color: #cf0a2c;
+  color: #ffffff;
+  padding: 15px 0;
+  display: block;
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-family: inherit;
+  cursor: pointer;
+  font-size: 16px;
+}

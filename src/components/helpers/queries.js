@@ -38,6 +38,7 @@ export const borrarProductoAPI = async (id) => {
 //petición POST
 export const crearProductoAPI = async (producto) => {
   try {
+    producto.cantidad = 1;
     const respuesta = await fetch(PRODUCTOS, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
