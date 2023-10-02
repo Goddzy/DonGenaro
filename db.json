@@ -173,11 +173,6 @@
     }
   ],
   "pedidos": [
-    {
-      "nombrePedido": "Renato Trevisiol Montiel",
-      "fechaPedido": "14/09/2023 16:37",
-      "productoPedido": "Pizza napolitana",
-      "id": 1
-    }
+    
   ]
 }

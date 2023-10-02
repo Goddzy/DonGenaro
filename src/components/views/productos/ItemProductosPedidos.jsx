@@ -47,4 +47,3 @@ const ItemProductosPedidos = ({producto,setProductosPedidos,productosPedidos,con
 
 export default ItemProductosPedidos;
 
-//producto.cantidad producto.nombreProducto producto.precio c/u  eliminar/reducir producto
