@@ -14,7 +14,7 @@ const ItemPedidos = ({ pedidos, setPedidos }) => {
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
       confirmButtonText: "Aceptar",
-      cancelButtonText: "Cancelar"
+      cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
         borrarPedidoAPI(pedidos.id).then((respuesta) => {
@@ -37,7 +37,15 @@ const ItemPedidos = ({ pedidos, setPedidos }) => {
       <td>{pedidos.id}</td>
       <td>{pedidos.nombrePedido}</td>
       <td>{pedidos.fechaPedido}</td>
-      <td>{pedidos.productoPedido}</td>
+      <td>
+        <ul>
+          {pedidos.productoPedido.map((producto, index) => (
+            <li key={index}>
+              {producto.cantidad}  {producto.nombreProducto}
+            </li>
+          ))}
+        </ul>
+      </td>
       <td className="text-center">
         <Button onClick={finalizarPedido} variant="success text-light">
           <FontAwesomeIcon icon={faCheck} />

@@ -170,9 +170,81 @@
       "password": "elfedecomecaca",
       "perfil": "administrador",
       "id": 1
+    },
+    {
+      "nombreUsuario": "Silvina",
+      "emailUsuario": "silvina@gmail.com",
+      "password": "elfedecomecaca",
+      "perfil": "cliente",
+      "id": 2
     }
   ],
   "pedidos": [
-    
+    {
+      "nombrePedido": "Renato Trevisiol Montiel",
+      "fechaPedido": "02/10/2023 20:19",
+      "productoPedido": [
+        {
+          "nombreProducto": "Pizza",
+          "descripcion": "pizza",
+          "precio": "1231",
+          "imagen": "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+          "categoria": "Pizzas",
+          "cantidad": 7,
+          "id": 10
+        }
+      ],
+      "id": 1
+    },
+    {
+      "nombrePedido": "Renato Trevisiol Montiel",
+      "fechaPedido": "02/10/2023 20:19",
+      "productoPedido": [
+        {
+          "nombreProducto": "Fulbito",
+          "descripcion": "Pizza",
+          "precio": "25",
+          "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
+          "categoria": "Pizzas",
+          "cantidad": 7,
+          "id": 11
+        }
+      ],
+      "id": 2
+    },
+    {
+      "nombrePedido": "Renato Trevisiol Montiel",
+      "fechaPedido": "02/10/2023 20:20",
+      "productoPedido": [
+        {
+          "nombreProducto": "Pizza",
+          "descripcion": "pizza",
+          "precio": "1231",
+          "imagen": "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
+          "categoria": "Pizzas",
+          "cantidad": 1,
+          "id": 10
+        },
+        {
+          "nombreProducto": "Fulbito",
+          "descripcion": "Pizza",
+          "precio": "25",
+          "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
+          "categoria": "Pizzas",
+          "cantidad": 1,
+          "id": 11
+        },
+        {
+          "nombreProducto": "Medialuna",
+          "descripcion": "dada",
+          "precio": "89",
+          "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
+          "categoria": "Pizzas",
+          "cantidad": 1,
+          "id": 12
+        }
+      ],
+      "id": 3
+    }
   ]
 }
