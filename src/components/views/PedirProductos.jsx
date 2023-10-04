@@ -13,6 +13,11 @@ const PedirProductos = () => {
   const [productosPedidos, setProductosPedidos] = useState([]);
   const [precioTotal, setPrecioTotal] = useState(0);
   const [contarProductos, setContarProductos] = useState(0);
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
+
+  const handleSeleccionCategoria = (e) => {
+    setCategoriaSeleccionada(e.target.value);
+  };
 
   useEffect(() => {
     obtenerProductosAPI().then((productos) => {
@@ -27,11 +32,11 @@ const PedirProductos = () => {
           <img
             className="d-block w-100"
             height={450}
-            src="https://images.pexels.com/photos/166451/pexels-photo-166451.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-            alt="primer slide pizza"
+            src="https://images.hola.com/imagenes/cocina/recetas/20191008151057/masa-de-pizza-casera/1-163-450/masa-pizza-t.jpg"
+            alt="pizza"
           />
           <Carousel.Caption>
-            <h1 className="carrucelTexto">Pizzas de la mejor calidad</h1>
+            <h1 className="carrucelTexto">La mejor calidad</h1>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
@@ -39,7 +44,7 @@ const PedirProductos = () => {
         onClick={() => setMostrarLista(!mostrarLista)}
         style={{
           position: "fixed",
-          top: "50px",
+          top: "80px",
           right: "5px",
           zIndex: "1000",
         }}
@@ -72,7 +77,7 @@ const PedirProductos = () => {
             alignItems: "center",
             justifyContent: "center",
             position: "fixed",
-            top: "80px",
+            top: "110px",
             right: "40px",
             zIndex: "1000",
           }}
@@ -80,7 +85,20 @@ const PedirProductos = () => {
           {contarProductos}
         </div>
       </div>
-      <div>
+      <div className="text-center mt-5">
+        <select
+          value={categoriaSeleccionada}
+          onChange={handleSeleccionCategoria}
+          className="select"
+        >
+          <option value="">Buscar por categoría</option>
+          <option value="Pizzas">Pizzas</option>
+          <option value="Pastas">Pastas</option>
+          <option value="Empanadas">Empanadas</option>
+          <option value="Bebidas">Bebidas</option>
+          <option value="Postres">Postres</option>
+        </select>
+
         <ListaProductos
           productosPedidos={productosPedidos}
           setProductosPedidos={setProductosPedidos}
@@ -93,132 +111,121 @@ const PedirProductos = () => {
         ></ListaProductos>
       </div>
       <Container>
-        <Row>
-          <h2 className="pt-5 display-3">Pizzas</h2>
-          <hr />
-          {productos
-            .filter((producto) => producto.categoria === "Pizzas")
-            .map((producto) => (
-              <ItemProducto
-                productosPedidos={productosPedidos}
-                setProductosPedidos={setProductosPedidos}
-                contarProductos={contarProductos}
-                setContarProductos={setContarProductos}
-                precioTotal={precioTotal}
-                setPrecioTotal={setPrecioTotal}
-                producto={producto}
-                key={producto.id}
-              />
-            ))}
-        </Row>
-        <Row>
-          <h2 className="pt-5 display-3">Pastas</h2>
-          <hr />
-          {productos
-            .filter((producto) => producto.categoria === "Pastas")
-            .map((producto) => (
-              <ItemProducto
-                productosPedidos={productosPedidos}
-                setProductosPedidos={setProductosPedidos}
-                contarProductos={contarProductos}
-                setContarProductos={setContarProductos}
-                precioTotal={precioTotal}
-                setPrecioTotal={setPrecioTotal}
-                producto={producto}
-                key={producto.id}
-              />
-            ))}
-        </Row>
-        <Row>
-          <h2 className="pt-5 display-3">Empanadas</h2>
-          <hr />
-          {productos
-            .filter((producto) => producto.categoria === "Empanadas")
-            .map((producto) => (
-              <ItemProducto
-                productosPedidos={productosPedidos}
-                setProductosPedidos={setProductosPedidos}
-                contarProductos={contarProductos}
-                setContarProductos={setContarProductos}
-                precioTotal={precioTotal}
-                setPrecioTotal={setPrecioTotal}
-                producto={producto}
-                key={producto.id}
-              />
-            ))}
-        </Row>
-        <Row>
-          <h2 className="pt-5 display-3">Gaseosas</h2>
-          <hr />
-          {productos
-            .filter((producto) => producto.categoria === "Gaseosas")
-            .map((producto) => (
-              <ItemProducto
-                productosPedidos={productosPedidos}
-                setProductosPedidos={setProductosPedidos}
-                contarProductos={contarProductos}
-                setContarProductos={setContarProductos}
-                precioTotal={precioTotal}
-                setPrecioTotal={setPrecioTotal}
-                producto={producto}
-                key={producto.id}
-              />
-            ))}
-        </Row>
-        <Row>
-          <h2 className="pt-5 display-3">Alcohol</h2>
-          <hr />
-          {productos
-            .filter((producto) => producto.categoria === "Alcohol")
-            .map((producto) => (
-              <ItemProducto
-                productosPedidos={productosPedidos}
-                setProductosPedidos={setProductosPedidos}
-                contarProductos={contarProductos}
-                setContarProductos={setContarProductos}
-                precioTotal={precioTotal}
-                setPrecioTotal={setPrecioTotal}
-                producto={producto}
-                key={producto.id}
-              />
-            ))}
-        </Row>
-        <Row>
-          <h2 className="pt-5 display-3">Postres salados</h2>
-          <hr />
-          {productos
-            .filter((producto) => producto.categoria === "Postres salados")
-            .map((producto) => (
-              <ItemProducto
-                productosPedidos={productosPedidos}
-                setProductosPedidos={setProductosPedidos}
-                contarProductos={contarProductos}
-                setContarProductos={setContarProductos}
-                precioTotal={precioTotal}
-                setPrecioTotal={setPrecioTotal}
-                producto={producto}
-                key={producto.id}
-              />
-            ))}
-        </Row>
-        <Row>
-          <h2 className="pt-5 display-3">Postres dulces</h2>
-          <hr />
-          {productos
-            .filter((producto) => producto.categoria === "Postres dulces")
-            .map((producto) => (
-              <ItemProducto
-                productosPedidos={productosPedidos}
-                setProductosPedidos={setProductosPedidos}
-                contarProductos={contarProductos}
-                setContarProductos={setContarProductos}
-                precioTotal={precioTotal}
-                setPrecioTotal={setPrecioTotal}
-                producto={producto}
-                key={producto.id}
-              />
-            ))}
-        </Row>
+        {categoriaSeleccionada === "" ? (
+          <>
+            <Row>
+              <h2 className="pt-5 display-3">Pizzas</h2>
+              <hr />
+              {productos
+                .filter((producto) => producto.categoria === "Pizzas")
+                .map((producto) => (
+                  <ItemProducto
+                    productosPedidos={productosPedidos}
+                    setProductosPedidos={setProductosPedidos}
+                    contarProductos={contarProductos}
+                    setContarProductos={setContarProductos}
+                    precioTotal={precioTotal}
+                    setPrecioTotal={setPrecioTotal}
+                    producto={producto}
+                    key={producto._id}
+                  />
+                ))}
+            </Row>
+            <Row>
+              <h2 className="pt-5 display-3">Pastas</h2>
+              <hr />
+              {productos
+                .filter((producto) => producto.categoria === "Pastas")
+                .map((producto) => (
+                  <ItemProducto
+                    productosPedidos={productosPedidos}
+                    setProductosPedidos={setProductosPedidos}
+                    contarProductos={contarProductos}
+                    setContarProductos={setContarProductos}
+                    precioTotal={precioTotal}
+                    setPrecioTotal={setPrecioTotal}
+                    producto={producto}
+                    key={producto._id}
+                  />
+                ))}
+            </Row>
+            <Row>
+              <h2 className="pt-5 display-3">Empanadas</h2>
+              <hr />
+              {productos
+                .filter((producto) => producto.categoria === "Empanadas")
+                .map((producto) => (
+                  <ItemProducto
+                    productosPedidos={productosPedidos}
+                    setProductosPedidos={setProductosPedidos}
+                    contarProductos={contarProductos}
+                    setContarProductos={setContarProductos}
+                    precioTotal={precioTotal}
+                    setPrecioTotal={setPrecioTotal}
+                    producto={producto}
+                    key={producto._id}
+                  />
+                ))}
+            </Row>
+            <Row>
+              <h2 className="pt-5 display-3">Bebidas</h2>
+              <hr />
+              {productos
+                .filter((producto) => producto.categoria === "Bebidas")
+                .map((producto) => (
+                  <ItemProducto
+                    productosPedidos={productosPedidos}
+                    setProductosPedidos={setProductosPedidos}
+                    contarProductos={contarProductos}
+                    setContarProductos={setContarProductos}
+                    precioTotal={precioTotal}
+                    setPrecioTotal={setPrecioTotal}
+                    producto={producto}
+                    key={producto._id}
+                  />
+                ))}
+            </Row>
+            <Row>
+              <h2 className="pt-5 display-3">Postres</h2>
+              <hr />
+              {productos
+                .filter((producto) => producto.categoria === "Postres")
+                .map((producto) => (
+                  <ItemProducto
+                    productosPedidos={productosPedidos}
+                    setProductosPedidos={setProductosPedidos}
+                    contarProductos={contarProductos}
+                    setContarProductos={setContarProductos}
+                    precioTotal={precioTotal}
+                    setPrecioTotal={setPrecioTotal}
+                    producto={producto}
+                    key={producto._id}
+                  />
+                ))}
+            </Row>
+          </>
+        ) : (
+          <Row>
+            <h2 className="pt-5 display-3">{categoriaSeleccionada}</h2>
+            <hr />
+            {productos
+              .filter(
+                (producto) => producto.categoria === categoriaSeleccionada
+              )
+              .map((producto) => (
+                <ItemProducto
+                  productosPedidos={productosPedidos}
+                  setProductosPedidos={setProductosPedidos}
+                  contarProductos={contarProductos}
+                  setContarProductos={setContarProductos}
+                  precioTotal={precioTotal}
+                  setPrecioTotal={setPrecioTotal}
+                  producto={producto}
+                  key={producto._id}
+                />
+              ))}
+          </Row>
+        )}
       </Container>
     </section>
   );

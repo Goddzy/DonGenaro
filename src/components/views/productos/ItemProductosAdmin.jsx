@@ -21,7 +21,7 @@ const ItemProductosAdmin = ({ producto, setProductos }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         //borrar el producto
-        borrarProductoAPI(producto.id).then((respuesta) => {
+        borrarProductoAPI(producto._id).then((respuesta) => {
           if (respuesta.status === 200) {
             Swal.fire("Listo!", "su producto ha sido borrado", "success");
             //actualizar la tabla
@@ -38,7 +38,7 @@ const ItemProductosAdmin = ({ producto, setProductos }) => {
 
   return (
     <tr>
-      <td>{producto.id}</td>
+      <td>{producto._id}</td>
       <td>{producto.nombreProducto}</td>
       <td>${producto.precio}</td>
       <td>{producto.descripcion}</td>
@@ -48,7 +48,7 @@ const ItemProductosAdmin = ({ producto, setProductos }) => {
         <Button variant="danger text-light" onClick={borrarProducto}>
           <FontAwesomeIcon icon={faTrash}/>
         </Button>
-        <Link to={`/administrar/editarProducto/${producto.id}`} className="btn btn-warning mx-2">
+        <Link to={`/administrar/editarProducto/${producto._id}`} className="btn btn-warning mx-2">
           <FontAwesomeIcon icon={faEdit}/>
         </Link>
       </td>

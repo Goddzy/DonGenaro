@@ -12,9 +12,9 @@ const ItemProducto = ({
 }) => {
 
   const agregarProducto = () => {
-    if (productosPedidos.find((item) => item.id === producto.id)) {
+    if (productosPedidos.find((item) => item._id === producto._id)) {
       const productos = productosPedidos.map((item) =>
-        item.id === producto.id
+        item._id === producto._id
           ? { ...item, cantidad: item.cantidad + 1 }
           : item
       );
@@ -36,6 +36,7 @@ const ItemProducto = ({
             variant="top"
             src={producto.imagen}
             alt={producto.nombreProducto}
+            height={350}
           />
         </figure>
         <Card.Body className="text-center">

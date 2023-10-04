@@ -11,8 +11,8 @@ const Inicio = () => {
           <img
             className="d-block w-100"
             height={450}
-            src="https://images.pexels.com/photos/1653877/pexels-photo-1653877.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="primer slide pizza"
+            src="https://imag.bonviveur.com/sorrentinos-rellenos-de-jamon-y-queso-con-salsa-marinara.webp"
+            alt="primer slide sorrentinos"
           />
           <Carousel.Caption>
             <h3 className="carrucelTexto">Sabores a Domicilio</h3>
@@ -33,8 +33,8 @@ const Inicio = () => {
           <img
             className="d-block w-100"
             height={450}
-            src="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=600"
-            alt="tercer slide pizza"
+            src="https://www.paulinacocina.net/wp-content/uploads/2022/01/empanadas-saltenas.jpg"
+            alt="tercer slide empanadas"
           />
           <Carousel.Caption>
             <h3 className="carrucelTexto">Bocados de calidad</h3>

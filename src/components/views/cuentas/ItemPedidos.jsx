@@ -17,7 +17,7 @@ const ItemPedidos = ({ pedidos, setPedidos }) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        borrarPedidoAPI(pedidos.id).then((respuesta) => {
+        borrarPedidoAPI(pedidos._id).then((respuesta) => {
           if (respuesta.status === 200) {
             Swal.fire("Listo!", "Pedido finalizado", "success");
             //actualizar la tabla
@@ -34,7 +34,7 @@ const ItemPedidos = ({ pedidos, setPedidos }) => {
 
   return (
     <tr>
-      <td>{pedidos.id}</td>
+      <td>{pedidos._id}</td>
       <td>{pedidos.nombrePedido}</td>
       <td>{pedidos.fechaPedido}</td>
       <td>

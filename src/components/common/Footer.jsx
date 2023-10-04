@@ -51,8 +51,8 @@ const Footer = () => {
         </Col>
         <Col md="4 my-2" className="fs-5">
           <h3>Horarios de atención</h3>
-          <li className="me-3">Lun - Vie: 08:00 - 22:00</li>
-          <li>Sab - Dom: 09:00 - 00:00</li>
+          <li className="me-3">Lunes a Viernes: 08:00 - 22:00</li>
+          <li>Sábados y Domingos: 09:00 - 00:00</li>
         </Col>
         <Col md="4 my-2" className="fs-5">
           <Link className="fs-5 text-decoration-none text-light" to="/aboutUs">

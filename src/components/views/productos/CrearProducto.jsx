@@ -118,10 +118,8 @@ const CrearProducto = () => {
             <option value="Pizzas">Pizza</option>
             <option value="Pastas">Pasta</option>
             <option value="Empanadas">Empanada</option>
-            <option value="Gaseosas">Gaseosa</option>
-            <option value="Alcohol">Alcohol</option>
-            <option value="Postres salados">Postre salado</option>
-            <option value="Postres dulces">Postre dulce</option>
+            <option value="Bebidas">Bebida</option>
+            <option value="Postres">Postre</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}

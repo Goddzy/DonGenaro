@@ -17,7 +17,7 @@ const ItemCuentas = ({ usuarios, setUsuarios }) => {
       cancelButtonText: "Cancelar",
     }).then((result) => {
       if (result.isConfirmed) {
-        borrarUsuarioAPI(usuarios.id).then((respuesta) => {
+        borrarUsuarioAPI(usuarios._id).then((respuesta) => {
           if (respuesta.status === 200) {
             Swal.fire("Listo!", "cuenta eliminada", "success");
             obtenerUsuariosAPI().then((respuesta) => {
@@ -33,7 +33,7 @@ const ItemCuentas = ({ usuarios, setUsuarios }) => {
 
   return (
     <tr>
-      <td>{usuarios.id}</td>
+      <td>{usuarios._id}</td>
       <td>{usuarios.nombreUsuario}</td>
       <td>{usuarios.emailUsuario}</td>
       <td>{usuarios.perfil}</td>

@@ -4,7 +4,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 const ItemProductosPedidos = ({producto,setProductosPedidos,productosPedidos,contarProductos,setContarProductos,precioTotal,setPrecioTotal,}) => {
   const reducirProducto = (producto) => {
     const productosActualizados = productosPedidos.map((item) =>
-      item.id === producto.id && item.cantidad > 1
+      item._id === producto._id && item.cantidad > 1
         ? { ...item, cantidad: item.cantidad - 1 }
         : item
     );
@@ -14,7 +14,7 @@ const ItemProductosPedidos = ({producto,setProductosPedidos,productosPedidos,con
 
     if (producto.cantidad === 1) {
       setProductosPedidos(
-        productosActualizados.filter((item) => item.id !== producto.id)
+        productosActualizados.filter((item) => item._id !== producto._id)
       );
     } else {
       setProductosPedidos(productosActualizados);

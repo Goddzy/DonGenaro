@@ -1,168 +1,5 @@
 {
-  "productos": [
-    {
-      "nombreProducto": "Medialuna",
-      "descripcion": "Fideos con salsa rosada",
-      "precio": "900",
-      "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
-      "categoria": "Empanadas",
-      "cantidad": 1,
-      "id": 1
-    },
-    {
-      "nombreProducto": "Medialuna",
-      "descripcion": "Fideos con salsa rosada",
-      "precio": "123",
-      "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
-      "categoria": "Empanadas",
-      "cantidad": 1,
-      "id": 2
-    },
-    {
-      "nombreProducto": "Fideos con tuco",
-      "descripcion": "Pizza",
-      "precio": "123",
-      "imagen": "https://www.cocinacaserayfacil.net/wp-content/uploads/2020/03/Recetas-faciles-de-cocinar-y-sobrevivir-en-casa-al-coronavirus_2.jpg",
-      "categoria": "Gaseosas",
-      "cantidad": 1,
-      "id": 3
-    },
-    {
-      "nombreProducto": "Pasta",
-      "descripcion": "pasta",
-      "precio": "1500",
-      "imagen": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "Pastas",
-      "cantidad": 1,
-      "id": 5
-    },
-    {
-      "nombreProducto": "Gaseosa",
-      "descripcion": "Gaseosa",
-      "precio": "12300",
-      "imagen": "https://http2.mlstatic.com/D_NQ_NP_783131-MLA48169894532_112021-O.webp",
-      "categoria": "Gaseosas",
-      "cantidad": 1,
-      "id": 6
-    },
-    {
-      "nombreProducto": "Alcohol",
-      "descripcion": "alcohol",
-      "precio": "1309",
-      "imagen": "https://images.pexels.com/photos/90946/pexels-photo-90946.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      "categoria": "Alcohol",
-      "cantidad": 1,
-      "id": 7
-    },
-    {
-      "nombreProducto": "salado",
-      "descripcion": "salado",
-      "precio": "120",
-      "imagen": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fintrobay.com%2Fblog%2Fhttps-que-es-y-para-que-sirve&psig=AOvVaw1QrwIefeA7cYL31GMHVckz&ust=1690584025542000&source=images&cd=vfe&opi=89978449&ved=0CA0QjRxqFwoTCKjK0LT6r4ADFQAAAAAdAAAAABAi",
-      "categoria": "Postres salados",
-      "cantidad": 1,
-      "id": 8
-    },
-    {
-      "nombreProducto": "dulce",
-      "descripcion": "dulce",
-      "precio": "1200",
-      "imagen": "https://http2.mlstatic.com/D_NQ_NP_783131-MLA48169894532_112021-O.webp",
-      "categoria": "Postres dulces",
-      "cantidad": 1,
-      "id": 9
-    },
-    {
-      "nombreProducto": "Pizza",
-      "descripcion": "pizza",
-      "precio": "1231",
-      "imagen": "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 10
-    },
-    {
-      "nombreProducto": "Fulbito",
-      "descripcion": "Pizza",
-      "precio": "25",
-      "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 11
-    },
-    {
-      "nombreProducto": "Medialuna",
-      "descripcion": "dada",
-      "precio": "89",
-      "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 12
-    },
-    {
-      "nombreProducto": "Fulbito",
-      "descripcion": "dada",
-      "precio": "89",
-      "imagen": "https://www.cocinacaserayfacil.net/wp-content/uploads/2020/03/Recetas-faciles-de-cocinar-y-sobrevivir-en-casa-al-coronavirus_2.jpg",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 13
-    },
-    {
-      "nombreProducto": "Fulbito",
-      "descripcion": "dada",
-      "precio": "89",
-      "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 14
-    },
-    {
-      "nombreProducto": "Medialuna",
-      "descripcion": "dada",
-      "precio": "78",
-      "imagen": "https://images.pexels.com/photos/17864141/pexels-photo-17864141/free-photo-of-taza-capuchino-planta-fotografia-de-comida.jpeg?auto=compress&cs=tinysrgb&w=600",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 15
-    },
-    {
-      "nombreProducto": "Medialuna",
-      "descripcion": "78",
-      "precio": "67",
-      "imagen": "https://www.bakeandshare.com/wp-content/uploads/2020/05/torta-rogel-dulce-de-leche-7.jpg",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 16
-    },
-    {
-      "nombreProducto": "Medialuna",
-      "descripcion": "Pizza",
-      "precio": "567",
-      "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 17
-    },
-    {
-      "nombreProducto": "Fulbito",
-      "descripcion": "dada",
-      "precio": "678",
-      "imagen": "https://www.companiaamericana.com.ar/wp-content/uploads/2022/11/fulbito-mani.jpg",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 18
-    },
-    {
-      "nombreProducto": "Medialuna",
-      "descripcion": "dada",
-      "precio": "567",
-      "imagen": "https://www.cocinacaserayfacil.net/wp-content/uploads/2020/03/Recetas-faciles-de-cocinar-y-sobrevivir-en-casa-al-coronavirus_2.jpg",
-      "categoria": "Pizzas",
-      "cantidad": 1,
-      "id": 19
-    }
-  ],
+  "productos": [],
   "usuarios": [
     {
       "nombreUsuario": "Renato Trevisiol Montiel",
@@ -173,10 +10,10 @@
     },
     {
       "nombreUsuario": "Silvina",
-      "emailUsuario": "silvina@gmail.com",
+      "emailUsuario": "silvinamontiel25@gmail.com",
       "password": "elfedecomecaca",
       "perfil": "cliente",
-      "id": 2
+      "id": 3
     }
   ],
   "pedidos": [
@@ -185,22 +22,6 @@
       "fechaPedido": "02/10/2023 20:19",
       "productoPedido": [
         {
-          "nombreProducto": "Pizza",
-          "descripcion": "pizza",
-          "precio": "1231",
-          "imagen": "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
-          "categoria": "Pizzas",
-          "cantidad": 7,
-          "id": 10
-        }
-      ],
-      "id": 1
-    },
-    {
-      "nombrePedido": "Renato Trevisiol Montiel",
-      "fechaPedido": "02/10/2023 20:19",
-      "productoPedido": [
-        {
           "nombreProducto": "Fulbito",
           "descripcion": "Pizza",
           "precio": "25",
@@ -214,37 +35,19 @@
     },
     {
       "nombrePedido": "Renato Trevisiol Montiel",
-      "fechaPedido": "02/10/2023 20:20",
+      "fechaPedido": "02/10/2023 22:20",
       "productoPedido": [
         {
-          "nombreProducto": "Pizza",
-          "descripcion": "pizza",
-          "precio": "1231",
-          "imagen": "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
-          "categoria": "Pizzas",
-          "cantidad": 1,
-          "id": 10
-        },
-        {
-          "nombreProducto": "Fulbito",
-          "descripcion": "Pizza",
-          "precio": "25",
-          "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
-          "categoria": "Pizzas",
-          "cantidad": 1,
-          "id": 11
-        },
-        {
           "nombreProducto": "Medialuna",
-          "descripcion": "dada",
-          "precio": "89",
-          "imagen": "https://assets.elgourmet.com/wp-content/uploads/2011/09/shutterstock_1366373012-1024x683.jpg.webp",
+          "descripcion": "78",
+          "precio": "67",
+          "imagen": "https://www.bakeandshare.com/wp-content/uploads/2020/05/torta-rogel-dulce-de-leche-7.jpg",
           "categoria": "Pizzas",
           "cantidad": 1,
-          "id": 12
+          "id": 16
         }
       ],
-      "id": 3
+      "id": 4
     }
   ]
 }

@@ -23,7 +23,6 @@ const ListaProductos = ({
   const startIndex = currentPage * productosPorPagina;
   const endIndex = startIndex + productosPorPagina;
   const productosEnPagina = productosPedidos.slice(startIndex, endIndex);
-  const navegacion = useNavigate();
 
   const handlePageClick = ({ selected }) => {
     if (
@@ -89,7 +88,6 @@ const ListaProductos = ({
             fechaPedido: fechaFormateada,
             productoPedido: productosPedidos,
           };
-
           // Realizar la petición a json-server
           crearPedidoAPI(pedido)
             .then((respuesta) => {
@@ -129,7 +127,7 @@ const ListaProductos = ({
           className="bg-light rounded shadow p-3"
           style={{
             position: "fixed",
-            top: "110px",
+            top: "140px",
             right: "5px",
             zIndex: "1000",
           }}
@@ -140,7 +138,7 @@ const ListaProductos = ({
                 {productosEnPagina.map((producto) => (
                   <ItemProductosPedidos
                     producto={producto}
-                    key={producto.id}
+                    key={producto._id}
                     productosPedidos={productosPedidos}
                     setProductosPedidos={setProductosPedidos}
                     contarProductos={contarProductos}

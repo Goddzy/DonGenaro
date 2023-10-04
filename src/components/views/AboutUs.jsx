@@ -30,8 +30,8 @@ const AboutUs = () => {
             programador Full-Stack. Mi Stack se basa en MERN (MongoDB, Express,
             React y Node), y esta página fue diseñada con React. Actualmente
             estoy disponible para cualquier puesto de trabajo relacionado con el
-            desarrollo web. Soy una persona muy responsable y que está en
-            constante aprendizaje.
+            desarrollo web. <br />
+            Soy una persona muy responsable, organizada y tengo conocimientos sobre liderazgo y trabajo en equipo. Mi nivel de inglés es medio/avanzado y permanentemente estoy capacitándome y aprendiendo.
           </p>
           <Row className="my-5">
             <h2>Comunicate conmigo</h2>

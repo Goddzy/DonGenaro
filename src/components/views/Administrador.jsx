@@ -77,7 +77,7 @@ const Administrador = () => {
               return (
                 <ItemPedidos
                   pedidos={pedidos}
-                  key={pedidos.id}
+                  key={pedidos._id}
                   setPedidos={setPedidos}
                 ></ItemPedidos>
               );
@@ -126,7 +126,7 @@ const Administrador = () => {
               return (
                 <ItemProductosAdmin
                   producto={producto}
-                  key={producto.id}
+                  key={producto._id}
                   setProductos={setProductos}
                 ></ItemProductosAdmin>
               );
@@ -164,7 +164,7 @@ const Administrador = () => {
             .map((usuarios) => {
               return (
                 <ItemCuentas
-                  key={usuarios.id}
+                  key={usuarios._id}
                   usuarios={usuarios}
                   setUsuarios={setUsuarios}
                 ></ItemCuentas>

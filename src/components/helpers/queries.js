@@ -51,6 +51,7 @@ export const crearProductoAPI = async (producto) => {
 };
 //petición PUT
 export const editarProductoAPI = async (id, producto) => {
+  producto.cantidad = 1;
   const respuesta = await fetch(PRODUCTOS + "/" + id, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -94,7 +95,7 @@ export const crearUsuarioAPI = async (usuario) => {
     const respuesta = await fetch(USUARIOS, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(usuario)
+      body: JSON.stringify(usuario),
     });
     return respuesta;
   } catch (error) {
@@ -117,21 +118,18 @@ export const login = async (usuario) => {
   try {
     const respuesta = await fetch(USUARIOS);
     const listaUsuarios = await respuesta.json();
-    const usuarioBuscado = listaUsuarios.find((itemUsuario)=>{return itemUsuario.emailUsuario === usuario.emailUsuario
-    })
-    if (usuarioBuscado){
-      if(usuarioBuscado.password===usuario.password){
-        return usuarioBuscado
-      }else{return}
-
-    }else{
-      return
+    const usuarioBuscado = listaUsuarios.find((itemUsuario) => {
+      return itemUsuario.emailUsuario === usuario.emailUsuario;
+    });
+    if (usuarioBuscado) {
+      return usuarioBuscado;
+    } else {
+      return;
     }
   } catch (error) {
-    return
+    return;
   }
 };
-
 
 //===============================PETICIONES PARA LOS PEDIDOS===============================
 
@@ -163,7 +161,7 @@ export const crearPedidoAPI = async (pedido) => {
     const respuesta = await fetch(PEDIDOS, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(pedido)
+      body: JSON.stringify(pedido),
     });
     return respuesta;
   } catch (error) {
