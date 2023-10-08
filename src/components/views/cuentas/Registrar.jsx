@@ -4,25 +4,36 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { crearUsuarioAPI } from "../../helpers/queries";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
-const Registrar = ({setUsuarioLogeado}) => {
+const Registrar = ({ setUsuarioLogeado }) => {
   const navegacion = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset
+    reset,
   } = useForm();
 
   const onSubmit = (data) => {
     crearUsuarioAPI(data).then((respuesta) => {
       if (respuesta.status === 201) {
         reset();
-        Swal.fire("Su cuenta ha sido creada","Ya puede iniciar sesión","success");
+        Swal.fire(
+          "Su cuenta ha sido creada",
+          "Ya puede iniciar sesión",
+          "success"
+        );
         localStorage.setItem("usuarioCreadoKey", JSON.stringify(data));
         setUsuarioLogeado(data);
         navegacion("/");
-      }else{Swal.fire('Ocurrió un error','Intente este proceso más tarde' , 'error')}
+      } else {
+        Swal.fire(
+          "Ocurrió un error",
+          "Intente este proceso más tarde",
+          "error"
+        );
+      }
     });
   };
 
@@ -101,9 +112,14 @@ const Registrar = ({setUsuarioLogeado}) => {
             {errors.password?.message}
           </Form.Text>
         </Form.Group>
-        <Button type="submit" variant="danger" className="w-100 my-5">
+        <Button type="submit" variant="danger" className="w-100 mt-5">
           Crear
         </Button>
+        <Link to="/IniciarSesion" className="text-decoration-none">
+          <p className="text-center mt-3 mb-4 colorRojoTexto">
+            Ya tienes una cuenta? inicie sesión
+          </p>
+        </Link>
       </Form>
     </Container>
   );

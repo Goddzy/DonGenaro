@@ -1,10 +1,8 @@
 import React from "react";
 import ItemProductosPedidos from "./ItemProductosPedidos";
-import ReactPaginate from "react-paginate";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeft, faArrowRight } from "@fortawesome/free-solid-svg-icons";
-import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { crearPedidoAPI } from "../../helpers/queries";
 
@@ -19,7 +17,7 @@ const ListaProductos = ({
 }) => {
   //paginacion
   const [currentPage, setCurrentPage] = useState(0);
-  const productosPorPagina = 10;
+  const productosPorPagina = 5;
   const startIndex = currentPage * productosPorPagina;
   const endIndex = startIndex + productosPorPagina;
   const productosEnPagina = productosPedidos.slice(startIndex, endIndex);
@@ -50,6 +48,10 @@ const ListaProductos = ({
             <div class="mb-3">
               <label for="direccion" class="form-label">Dirección</label>
               <input type="text" class="form-control" id="direccion" required>
+            </div>
+            <div class="mb-3">
+              <label for="preferenciaPedido" class="form-label">Preferencias en tu pedido</label>
+              <input type="text" class="form-control" id="preferenciaPedido" required>
             </div>
             <div class="mb-3">
               <label for="metodoPago" class="form-label">Método de Pago</label>

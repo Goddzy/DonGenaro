@@ -5,12 +5,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './app.css'
 import AboutUs from "./components/views/AboutUs";
 import Error404 from "./components/views/Error404";
-import Administrador from "./components/views/Administrador";
 import PedirProductos from "./components/views/PedirProductos";
 import Registrar from "./components/views/cuentas/Registrar";
 import IniciarSesion from "./components/views/cuentas/IniciarSesion";
-import CrearProducto from "./components/views/productos/CrearProducto";
-import EditarProducto from "./components/views/productos/EditarProducto"
 import { useState } from "react";
 import RutasProtegidas from "./components/routes/RutasProtegidas";
 import RutasAdmin from "./components/routes/RutasAdmin";
