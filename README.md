@@ -20,12 +20,12 @@ npm run dev
 ## Librerias externas
 
 -  fontawesome
--  bootstrap
--  react-bootstrap
--  react-hook-form
--  react-paginate
--  react-router-doom
--  sweetalert2
+-  Bootstrap
+-  React-Bootstrap
+-  React-Hook-Form
+-  React-Paginate
+-  React-Router-Doom
+-  SweatAlert2
 
 
 # Servidores
