@@ -19,7 +19,7 @@ npm run dev
 
 ## Librerias externas
 
--  fontawesome
+-  Fontawesome
 -  Bootstrap
 -  React-Bootstrap
 -  React-Hook-Form
