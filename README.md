@@ -26,8 +26,3 @@ npm run dev
 -  React-Paginate
 -  React-Router-Doom
 -  SweatAlert2
-
-
-# Servidores
-
--   Netlify
